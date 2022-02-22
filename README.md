@@ -41,8 +41,8 @@
 
 
 ## Delete
+![delete](https://user-images.githubusercontent.com/72419533/155215423-c05575f1-4d9d-41ea-bd3a-66042b19a71b.PNG)
 
-![delete](https://user-images.githubusercontent.com/72419533/155215241-c7d2e2be-57d7-4019-bd6e-4170e4e7ca55.PNG)
 
 
 
