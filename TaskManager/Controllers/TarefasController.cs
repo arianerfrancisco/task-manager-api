@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TaskManager.Data.Repositories;
 
 namespace TaskManager.Controllers;
 
 public class TarefasController : Controller
 {
+    private ITarefasRepository _tarefasRepository;
+    
     // GET: api/<TarefasController>
     [HttpGet]
     public IEnumerable<string> Get()
