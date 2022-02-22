@@ -3,9 +3,6 @@
 - Criar uma API para gerenciar tarefas, do tipo to do list.
 - Criar Web API com ASP.NET + MongoDb
 
-![to-do-list-apps](https://user-images.githubusercontent.com/72419533/155141748-f54d3d2e-90a1-4119-844d-0e989d4d9833.png)
-
-
 ## Ferramentas ⛏
 
 - JetBrains Rider 2021.3.3
