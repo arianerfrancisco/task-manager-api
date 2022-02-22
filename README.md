@@ -6,7 +6,8 @@
 ## Ferramentas ⛏
 
 - JetBrains Rider 2021.3.3
-- Robo 3T (gerenciar as Collections para MongoDb)
+- Postman
+- IDE: JetBrains Rider 2021.3.3
 
 ![índice](https://user-images.githubusercontent.com/72419533/155141851-d1519cdb-6eb2-432a-90bc-1b911595d5c5.jpg)
 
