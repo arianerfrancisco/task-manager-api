@@ -42,6 +42,11 @@
 ![delete](https://user-images.githubusercontent.com/72419533/155215423-c05575f1-4d9d-41ea-bd3a-66042b19a71b.PNG)
 
 
+## Referência
 
+ Canal do professor João Paulo S. Araujo
+ 
+ https://www.youtube.com/watch?v=9vbT-nF_JM8
+ 
 
 ## Repositório criado para fins de Estudo 📒
