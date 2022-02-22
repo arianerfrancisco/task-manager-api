@@ -7,12 +7,7 @@
 
 - JetBrains Rider 2021.3.3
 - Postman
-- IDE: JetBrains Rider 2021.3.3
-
-![índice](https://user-images.githubusercontent.com/72419533/155141851-d1519cdb-6eb2-432a-90bc-1b911595d5c5.jpg)
-
-![índice](https://user-images.githubusercontent.com/72419533/155141904-c9fbb093-be6f-47ed-8b32-d03629cad951.png)
-
+- MongoDB
 
 # Testando projeto
 
