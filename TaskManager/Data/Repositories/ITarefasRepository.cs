@@ -1,14 +1,18 @@
-﻿using TaskManager.Models;
+﻿using System.Collections.Generic;
+using TaskManager.Models;
 
-namespace TaskManager.Data.Repositories;
-
-public interface ITarefasRepository
-// primeiro cria-se a abstração/especificação com a Interface e depois implementa
-// com a classe
+namespace TaskManager.Data.Repositories
 {
-    void Adicionar(Tarefa tarefa);
-    void Atualizar(String id, Tarefa tarefaAtualizada);
+    public interface ITarefasRepository
+    {
+        void Adicionar(Tarefa tarefa);
 
-    IEnumerable<Tarefa> Buscar();
-    Tarefa Buscar(string id);
+        void Atualizar(string id, Tarefa tarefaAtualizada);
+
+        IEnumerable<Tarefa> Buscar();
+
+        Tarefa Buscar(string id);
+
+        void Remover(string id);
+    }
 }

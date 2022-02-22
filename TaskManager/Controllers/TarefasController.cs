@@ -1,41 +1,81 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Data.Repositories;
+using TaskManager.Models;
+using TaskManager.Models.InputModels;
 
-namespace TaskManager.Controllers;
-
-public class TarefasController : Controller
+namespace TaskManager.Controllers
 {
-    private ITarefasRepository _tarefasRepository;
-    
-    // GET: api/<TarefasController>
-    [HttpGet]
-    public IEnumerable<string> Get()
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TarefasController : ControllerBase
     {
-        return new string[] { "value1", "value2" };
-    }
+        private ITarefasRepository _tarefasRepository;
 
-    // GET api/<TarefasController>/5
-    [HttpGet("{id}")]
-    public string Get(int id)
-    {
-        return "value";
-    }
+        public TarefasController(ITarefasRepository tarefasRepository)
+        {
+            _tarefasRepository = tarefasRepository;
+        }
 
-    // POST api/<TarefasController>
-    [HttpPost]
-    public void Post([FromBody] string value)
-    {
-    }
 
-    // PUT api/<TarefasController>/5
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
-    {
-    }
+        // GET: api/tarefas
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var tarefas = _tarefasRepository.Buscar();
+            return Ok(tarefas);
+        }
 
-    // DELETE api/<TarefasController>/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
+        // GET api/tarefas/{id}
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
+        {
+            var tarefa = _tarefasRepository.Buscar(id);
+
+            if (tarefa == null)
+                return NotFound();
+
+            return Ok(tarefa);
+        }
+
+        // POST api/tarefas
+        [HttpPost]
+        public IActionResult Post([FromBody] TarefaInputModel novaTarefa)
+        {
+            var tarefa = new Tarefa(novaTarefa.Nome, novaTarefa.Detalhes);
+
+            _tarefasRepository.Adicionar(tarefa);
+
+            return Created("", tarefa);
+        }
+
+        // PUT api/tarefas/{id}
+        [HttpPut("{id}")]
+        public IActionResult Put(string id, [FromBody] TarefaInputModel tarefaAtualizada)
+        {
+            var tarefa = _tarefasRepository.Buscar(id);
+
+            if (tarefa == null)
+                return NotFound();
+
+            tarefa.AtualizarTarefa(tarefaAtualizada.Nome, tarefaAtualizada.Detalhes, tarefaAtualizada.Concluido);
+
+            _tarefasRepository.Atualizar(id, tarefa);
+
+            return Ok(tarefa);
+        }
+
+        // DELETE api/tarefas/{id}
+        [HttpDelete("{id}")]
+        public IActionResult Delete(string id)
+        {
+            var tarefa = _tarefasRepository.Buscar(id);
+
+            if (tarefa == null)
+                return NotFound();
+
+            _tarefasRepository.Remover(id);
+
+            return NoContent();
+        }
     }
 }
