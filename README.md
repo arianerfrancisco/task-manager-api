@@ -31,7 +31,7 @@
 
 ![get](https://user-images.githubusercontent.com/72419533/155215167-f1942ed4-ebb8-4bc4-ac67-e93692893c61.png)
 
-## Read por ID
+## Read by ID
 
 ![getID](https://user-images.githubusercontent.com/72419533/155215185-a1db8ec7-df24-4234-8685-60ebc092dd42.PNG)
 
